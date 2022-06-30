@@ -1,8 +1,10 @@
-import { SaveOutlined } from '@mui/icons-material';
+import { KeyboardBackspace, SaveOutlined } from '@mui/icons-material';
 import { Box, Button, Grid, TextField } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
 import IColaborador from '../../types/IColoaborador';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import { useNavigate } from 'react-router-dom';
 
 const data = {
   colaboradores: [] as IColaborador[]
@@ -13,7 +15,6 @@ interface Props {
 }
  
 export default function FormCadastroColaborador({ token }: Props) {
-
   const [colaborador, setColaborador] = useState<IColaborador>({
     id: 0,
     nome: '',
